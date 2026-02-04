@@ -39,20 +39,10 @@ const App: React.FC = () => {
         const mapping: { number: number; prizeId: PrizeLevel }[] = [];
         const numbers = Array.from({ length: 80 }, (_, i) => i + 1);
 
-        // 6 fixed to FIRST
-        mapping.push({ number: 6, prizeId: PrizeLevel.FIRST });
-        // 30 fixed to SECOND
-        mapping.push({ number: 30, prizeId: PrizeLevel.SECOND });
-
-        const availableNumbers = numbers.filter(n => n !== 6 && n !== 30);
-
         // Remaining prize pool
         const pool: PrizeLevel[] = [];
         INITIAL_PRIZES.forEach(p => {
-            let count = p.total;
-            if (p.id === PrizeLevel.FIRST) count -= 1; // 6 already taken
-            if (p.id === PrizeLevel.SECOND) count -= 1; // 30 already taken
-            for (let i = 0; i < count; i++) {
+            for (let i = 0; i < p.total; i++) {
                 pool.push(p.id);
             }
         });
@@ -60,7 +50,7 @@ const App: React.FC = () => {
         // Shuffle pool
         const shuffledPool = [...pool].sort(() => Math.random() - 0.5);
 
-        availableNumbers.forEach((num, index) => {
+        numbers.forEach((num, index) => {
             mapping.push({ number: num, prizeId: shuffledPool[index] });
         });
 
