@@ -6,7 +6,7 @@ export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, '.', '');
     return {
         server: {
-            // allowedHosts: ['d825f803470a.ngrok-free.app', 'localhost', '127.0.0.1'],
+            allowedHosts: ['3a382b0d96f0.ngrok-free.app', 'localhost', '127.0.0.1'],
             port: 3000,
             host: '0.0.0.0',
             cors: true,

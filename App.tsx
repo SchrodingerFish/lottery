@@ -271,7 +271,7 @@ const App: React.FC = () => {
             initial={{ opacity: 0, x: side === 'left' ? -100 : 100 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.8, duration: 1.2, ease: 'easeOut' }}
-            className={`fixed top-1/2 -translate-y-1/2 ${side === 'left' ? 'left-8' : 'right-8'} hidden xl:flex flex-col items-center gap-2 z-20`}
+            className={`fixed top-24 ${side === 'left' ? 'left-8' : 'right-8'} hidden xl:flex flex-col items-center gap-2 z-20`}
         >
             <div className="w-20 bg-gradient-to-b from-red-600 to-red-800 border-4 border-yellow-500 rounded-xl p-4 shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative">
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-10 h-3 bg-yellow-600 rounded-full shadow-inner"></div>
